@@ -1,0 +1,20 @@
+|wrapper
+SW[0] => SW[0]~2.IN1
+SW[1] => SW[1]~1.IN1
+SW[2] => SW[2]~0.IN1
+LEDR[0] <= SW[0]~2.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= SW[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= SW[2]~0.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] <= design1:dut.data_output
+
+
+|wrapper|design1:dut
+x => data_output~4.IN0
+x => data_output~0.IN0
+y => data_output~0.IN1
+y => data_output~4.IN1
+z => data_output~1.IN1
+z => data_output~2.IN1
+data_output <= data_output~5.DB_MAX_OUTPUT_PORT_TYPE
+
+
